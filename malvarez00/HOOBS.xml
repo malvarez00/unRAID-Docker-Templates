@@ -27,10 +27,11 @@ Local Modules Path -&amp;gt; /hoobs/node_modules&#xD;
 &amp;lt;br /&amp;gt;&#xD;
 Global Modules Path -&amp;gt; /usr/lib/node_modules&#xD;
 &amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;&#xD;
-For More Information visit:&amp;lt;a href="https://hoobs.org/"&amp;gt;https://hoobs.org/&amp;lt;/a&amp;gt;</Overview>
+For More Information visit:&amp;lt;a href="https://hoobs.org/"&amp;gt;https://hoobs.org/&amp;lt;/a&amp;gt;
+  </Overview>
   <Category>HomeAutomation: Tools:</Category>
   <Beta>False</Beta>
-  <WebUI>http://[IP]:[PORT:8080]</WebUI>
+  <WebUI>http://[IP]:[PORT:80]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/malvarez00/unRAID-Docker-Templates/master/malvarez00/HOOBS.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/malvarez00/unRAID-Docker-Templates/master/malvarez00/icons/hoobs_96x96.png</Icon>
   <ExtraParams>--restart=unless-stopped</ExtraParams>
@@ -57,7 +58,8 @@ Local Modules Path -&amp;gt; /hoobs/node_modules&#xD;
 &amp;lt;br /&amp;gt;&#xD;
 Global Modules Path -&amp;gt; /usr/lib/node_modules&#xD;
 &amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;&#xD;
-For More Information visit:&amp;lt;a href="https://hoobs.org/"&amp;gt;https://hoobs.org/&amp;lt;/a&amp;gt;</Description>
+For More Information visit:&amp;lt;a href="https://hoobs.org/"&amp;gt; https://hoobs.org/&amp;lt;/a&amp;gt;
+  </Description>
   <Networking>
     <Mode>bridge</Mode>
     <Publish>
@@ -84,5 +86,5 @@ For More Information visit:&amp;lt;a href="https://hoobs.org/"&amp;gt;https://ho
   <Labels/>
   <Config Name="Application Path" Target="/hoobs" Default="/mnt/user/appdata/hoobs/" Mode="rw" Description="Container Path: /hoobs" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/hoobs/</Config>
   <Config Name="Homebridge Port" Target="51826" Default="51826" Mode="tcp" Description="Container Port: 512826" Type="Port" Display="always" Required="true" Mask="false">51826</Config>
-  <Config Name="Server Port" Target="8082" Default="8282" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="false" Mask="false">8282</Config>
+  <Config Name="Server Port" Target="8082" Default="8282" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="false" Mask="false">80</Config>
 </Container>

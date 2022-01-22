@@ -68,7 +68,7 @@ For More Information visit:&amp;lt;a href="https://hoobs.org/"&amp;gt;https://ho
       </Port>
       <Port>
         <HostPort>8282</HostPort>
-        <ContainerPort>8080</ContainerPort>
+        <ContainerPort>80</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
     </Publish>

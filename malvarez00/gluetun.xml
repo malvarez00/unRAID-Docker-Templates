@@ -1,0 +1,212 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>gluetun</Name>
+  <Repository>qmcgaw/gluetun:latest</Repository>
+  <Registry>https://hub.docker.com/r/qmcgaw/gluetun</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <MyMAC/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/qdm12/gluetun/discussions</Support>
+  <Project>https://github.com/passteque/gluetun</Project>
+  <ReadMe/>
+  <Overview>VPN swiss-knife like client to tunnel to multiple VPN servers.&#13;
+&#13;
+VPN client in a thin Docker container for multiple VPN providers, written in Go, and using OpenVPN or Wireguard, DNS over TLS, with a few proxy servers built-in.</Overview>
+  <Category>Security: Network:VPN</Category>
+  <WebUI>http://[IP]:[PORT:8000]</WebUI>
+  <TemplateURL/>
+  <Icon>https://cdn.jsdelivr.net/gh/selfhst/icons/png/gluetun.png</Icon>
+  <ExtraParams>--cap-add=NET_ADMIN --device /dev/net/tun:/dev/net/tun</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1787529813</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="Appdata Directory" Target="/gluetun" Default="/mnt/user/appdata/gluetun" Mode="rw" Description="Where Gluetun stores its configuration." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/gluetun</Config>
+  <Config Name="Control Server Port" Target="8000" Default="8000" Mode="tcp" Description="WebUI / Control Server" Type="Port" Display="always" Required="false" Mask="false">8015</Config>
+  <Config Name="HTTP Proxy Port" Target="8888" Default="8888" Mode="tcp" Description="HTTP proxy" Type="Port" Display="always" Required="false" Mask="false">8885</Config>
+  <Config Name="Shadowsocks Port (TCP)" Target="8388" Default="8388" Mode="tcp" Description="Shadowsocks TCP" Type="Port" Display="always" Required="false" Mask="false">8388</Config>
+  <Config Name="Shadowsocks Port (UDP)" Target="8388" Default="8388" Mode="udp" Description="Shadowsocks UDP" Type="Port" Display="always" Required="false" Mask="false">8388</Config>
+  <Config Name="Socks5 Port (TCP)" Target="1080" Default="1080" Mode="tcp" Description="Socks5 TCP" Type="Port" Display="always" Required="false" Mask="false">1085</Config>
+  <Config Name="Socks5 Port (UDP)" Target="1080" Default="1080" Mode="udp" Description="Socks5 UDP" Type="Port" Display="always" Required="false" Mask="false">1085</Config>
+  <Config Name="VPN_SERVICE_PROVIDER" Target="VPN_SERVICE_PROVIDER" Default="airvpn|custom|cyberghost|expressvpn|fastestvpn|hide.me|ipvanish|ivpn|mullvad|nordvpn|perfectprivacy|privado|pia|privatevpn|protonvpn|purevpn|surfshark|torguard|vpnsecure|vpnunlimited|vyprvpn|wevpn|windscribe" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">nordvpn</Config>
+  <Config Name="VPN_TYPE" Target="VPN_TYPE" Default="openvpn|wireguard" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">wireguard</Config>
+  <Config Name="SERVER_COUNTRIES" Target="SERVER_COUNTRIES" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">United States</Config>
+  <Config Name="Timezone" Target="TZ" Default="" Mode="" Description="Timezone" Type="Variable" Display="always" Required="true" Mask="false">America/New_York</Config>
+  <Config Name="Transmission WebUI" Target="9091" Default="9091" Mode="tcp" Description="Transmission WebUI" Type="Port" Display="always" Required="false" Mask="false">9091</Config>
+  <Config Name="Transmission Port TCP" Target="51413" Default="51413" Mode="tcp" Description="Transmission Port TCP" Type="Port" Display="always" Required="false" Mask="false">51413</Config>
+  <Config Name="Transmission Port UDP" Target="51413" Default="51413" Mode="udp" Description="Transmission Port UDP" Type="Port" Display="always" Required="false" Mask="false">51413</Config>
+  <Config Name="Brave HTTP" Target="3000" Default="3000" Mode="tcp" Description="Brave desktop GUI HTTP must be proxied." Type="Port" Display="always" Required="false" Mask="false">6000</Config>
+  <Config Name="Brave HTTPS" Target="3001" Default="3001" Mode="tcp" Description="Brave HTTPS." Type="Port" Display="always" Required="false" Mask="false">6001</Config>
+  <Config Name="Firefox HTTP" Target="4000" Default="" Mode="tcp" Description="Firefox desktop GUI HTTP must be proxied." Type="Port" Display="always" Required="false" Mask="false">6002</Config>
+  <Config Name="Firefox HTTPS" Target="4001" Default="" Mode="tcp" Description="Firefox HTTPS." Type="Port" Display="always" Required="false" Mask="false">6003</Config>
+  <Config Name="Chrome HTTP" Target="5000" Default="" Mode="tcp" Description="Firefox desktop GUI HTTP must be proxied." Type="Port" Display="always" Required="false" Mask="false">6004</Config>
+  <Config Name="Chrome HTTPS" Target="5001" Default="" Mode="tcp" Description="Chrome HTTPS." Type="Port" Display="always" Required="false" Mask="false">6005</Config>
+  <Config Name="PATH" Target="PATH" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin</Config>
+  <Config Name="VPN_INTERFACE" Target="VPN_INTERFACE" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">tun0</Config>
+  <Config Name="OPENVPN_ENDPOINT_IP" Target="OPENVPN_ENDPOINT_IP" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="OPENVPN_ENDPOINT_PORT" Target="OPENVPN_ENDPOINT_PORT" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="OPENVPN_PROTOCOL" Target="OPENVPN_PROTOCOL" Default="udp|tcp" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">udp</Config>
+  <Config Name="OPENVPN_USER" Target="OPENVPN_USER" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="true"/>
+  <Config Name="OPENVPN_PASSWORD" Target="OPENVPN_PASSWORD" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="true"/>
+  <Config Name="OPENVPN_USER_SECRETFILE" Target="OPENVPN_USER_SECRETFILE" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">/run/secrets/openvpn_user</Config>
+  <Config Name="OPENVPN_PASSWORD_SECRETFILE" Target="OPENVPN_PASSWORD_SECRETFILE" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">/run/secrets/openvpn_password</Config>
+  <Config Name="OPENVPN_VERSION" Target="OPENVPN_VERSION" Default="2.6|2.5" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">2.6</Config>
+  <Config Name="OPENVPN_VERBOSITY" Target="OPENVPN_VERBOSITY" Default="0|1|2|3|4|5|6" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">1</Config>
+  <Config Name="OPENVPN_FLAGS" Target="OPENVPN_FLAGS" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="OPENVPN_CIPHERS" Target="OPENVPN_CIPHERS" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="OPENVPN_AUTH" Target="OPENVPN_AUTH" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="OPENVPN_PROCESS_USER" Target="OPENVPN_PROCESS_USER" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">root</Config>
+  <Config Name="OPENVPN_MSSFIX" Target="OPENVPN_MSSFIX" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="OPENVPN_CUSTOM_CONFIG" Target="OPENVPN_CUSTOM_CONFIG" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="WIREGUARD_ENDPOINT_IP" Target="WIREGUARD_ENDPOINT_IP" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="WIREGUARD_PRIVATE_KEY" Target="WIREGUARD_PRIVATE_KEY" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+  <Config Name="WIREGUARD_ENDPOINT_PORT" Target="WIREGUARD_ENDPOINT_PORT" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="WIREGUARD_CONF_SECRETFILE" Target="WIREGUARD_CONF_SECRETFILE" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">/run/secrets/wg0.conf</Config>
+  <Config Name="WIREGUARD_PRIVATE_KEY_SECRETFILE" Target="WIREGUARD_PRIVATE_KEY_SECRETFILE" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">/run/secrets/wireguard_private_key</Config>
+  <Config Name="WIREGUARD_PRESHARED_KEY" Target="WIREGUARD_PRESHARED_KEY" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="true"/>
+  <Config Name="WIREGUARD_PRESHARED_KEY_SECRETFILE" Target="WIREGUARD_PRESHARED_KEY_SECRETFILE" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">/run/secrets/wireguard_preshared_key</Config>
+  <Config Name="WIREGUARD_PUBLIC_KEY" Target="WIREGUARD_PUBLIC_KEY" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="WIREGUARD_ALLOWED_IPS" Target="WIREGUARD_ALLOWED_IPS" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="WIREGUARD_PERSISTENT_KEEPALIVE_INTERVAL" Target="WIREGUARD_PERSISTENT_KEEPALIVE_INTERVAL" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
+  <Config Name="WIREGUARD_ADDRESSES" Target="WIREGUARD_ADDRESSES" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="WIREGUARD_ADDRESSES_SECRETFILE" Target="WIREGUARD_ADDRESSES_SECRETFILE" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">/run/secrets/wireguard_addresses</Config>
+  <Config Name="WIREGUARD_MTU" Target="WIREGUARD_MTU" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">1320</Config>
+  <Config Name="WIREGUARD_IMPLEMENTATION" Target="WIREGUARD_IMPLEMENTATION" Default="auto|kernelspace|userspace" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">auto</Config>
+  <Config Name="AMNEZIAWG_ENDPOINT_IP" Target="AMNEZIAWG_ENDPOINT_IP" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="AMNEZIAWG_ENDPOINT_PORT" Target="AMNEZIAWG_ENDPOINT_PORT" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="AMNEZIAWG_CONF_SECRETFILE" Target="AMNEZIAWG_CONF_SECRETFILE" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">/run/secrets/wg0.conf</Config>
+  <Config Name="AMNEZIAWG_PRIVATE_KEY" Target="AMNEZIAWG_PRIVATE_KEY" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="true"/>
+  <Config Name="AMNEZIAWG_PRIVATE_KEY_SECRETFILE" Target="AMNEZIAWG_PRIVATE_KEY_SECRETFILE" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">/run/secrets/wireguard_private_key</Config>
+  <Config Name="AMNEZIAWG_PRESHARED_KEY" Target="AMNEZIAWG_PRESHARED_KEY" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="true"/>
+  <Config Name="AMNEZIAWG_PRESHARED_KEY_SECRETFILE" Target="AMNEZIAWG_PRESHARED_KEY_SECRETFILE" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">/run/secrets/wireguard_preshared_key</Config>
+  <Config Name="AMNEZIAWG_PUBLIC_KEY" Target="AMNEZIAWG_PUBLIC_KEY" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="AMNEZIAWG_ALLOWED_IPS" Target="AMNEZIAWG_ALLOWED_IPS" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="AMNEZIAWG_PERSISTENT_KEEPALIVE_INTERVAL" Target="AMNEZIAWG_PERSISTENT_KEEPALIVE_INTERVAL" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
+  <Config Name="AMNEZIAWG_ADDRESSES" Target="AMNEZIAWG_ADDRESSES" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="AMNEZIAWG_ADDRESSES_SECRETFILE" Target="AMNEZIAWG_ADDRESSES_SECRETFILE" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">/run/secrets/wireguard_addresses</Config>
+  <Config Name="AMNEZIAWG_MTU" Target="AMNEZIAWG_MTU" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="AMNEZIAWG_JC" Target="AMNEZIAWG_JC" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
+  <Config Name="AMNEZIAWG_JMIN" Target="AMNEZIAWG_JMIN" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
+  <Config Name="AMNEZIAWG_JMAX" Target="AMNEZIAWG_JMAX" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
+  <Config Name="AMNEZIAWG_S1" Target="AMNEZIAWG_S1" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
+  <Config Name="AMNEZIAWG_S2" Target="AMNEZIAWG_S2" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
+  <Config Name="AMNEZIAWG_S3" Target="AMNEZIAWG_S3" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
+  <Config Name="AMNEZIAWG_S4" Target="AMNEZIAWG_S4" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
+  <Config Name="AMNEZIAWG_H1" Target="AMNEZIAWG_H1" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="AMNEZIAWG_H2" Target="AMNEZIAWG_H2" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="AMNEZIAWG_H3" Target="AMNEZIAWG_H3" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="AMNEZIAWG_H4" Target="AMNEZIAWG_H4" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="AMNEZIAWG_I1" Target="AMNEZIAWG_I1" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="AMNEZIAWG_I2" Target="AMNEZIAWG_I2" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="AMNEZIAWG_I3" Target="AMNEZIAWG_I3" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="AMNEZIAWG_I4" Target="AMNEZIAWG_I4" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="AMNEZIAWG_I5" Target="AMNEZIAWG_I5" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="VPN_PORT_FORWARDING" Target="VPN_PORT_FORWARDING" Default="off|on" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">off</Config>
+  <Config Name="VPN_PORT_FORWARDING_PROVIDER" Target="VPN_PORT_FORWARDING_PROVIDER" Default="private internet access|perfect privacy|privatevpn|protonvpn" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">private internet access</Config>
+  <Config Name="VPN_PORT_FORWARDING_UP_COMMAND" Target="VPN_PORT_FORWARDING_UP_COMMAND" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="VPN_PORT_FORWARDING_DOWN_COMMAND" Target="VPN_PORT_FORWARDING_DOWN_COMMAND" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="VPN_PORT_FORWARDING_LISTENING_PORTS" Target="VPN_PORT_FORWARDING_LISTENING_PORTS" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
+  <Config Name="VPN_PORT_FORWARDING_PORTS_COUNT" Target="VPN_PORT_FORWARDING_PORTS_COUNT" Default="1|2|3|4|5" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">1</Config>
+  <Config Name="VPN_PORT_FORWARDING_STATUS_FILE" Target="VPN_PORT_FORWARDING_STATUS_FILE" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">/tmp/gluetun/forwarded_port</Config>
+  <Config Name="PMTUD_ICMP_ADDRESSES" Target="PMTUD_ICMP_ADDRESSES" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">1.1.1.1,8.8.8.8</Config>
+  <Config Name="PMTUD_TCP_ADDRESSES" Target="PMTUD_TCP_ADDRESSES" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">1.1.1.1:443,8.8.8.8:443,1.1.1.1:53,8.8.8.8:53,[2606:4700:4700::1111]:53,[2001:4860:4860::8888]:53,[2606:4700:4700::1111]:443,[2001:4860:4860::8888]:443</Config>
+  <Config Name="SERVER_REGIONS" Target="SERVER_REGIONS" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="SERVER_CITIES" Target="SERVER_CITIES" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="SERVER_HOSTNAMES" Target="SERVER_HOSTNAMES" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="SERVER_CATEGORIES" Target="SERVER_CATEGORIES" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="ISP" Target="ISP" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="OWNED_ONLY" Target="OWNED_ONLY" Default="no|yes" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">no</Config>
+  <Config Name="PRIVATE_INTERNET_ACCESS_OPENVPN_ENCRYPTION_PRESET" Target="PRIVATE_INTERNET_ACCESS_OPENVPN_ENCRYPTION_PRESET" Default="strong|normal" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">strong</Config>
+  <Config Name="VPN_PORT_FORWARDING_USERNAME" Target="VPN_PORT_FORWARDING_USERNAME" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="true"/>
+  <Config Name="VPN_PORT_FORWARDING_PASSWORD" Target="VPN_PORT_FORWARDING_PASSWORD" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="true"/>
+  <Config Name="OPENVPN_CERT" Target="OPENVPN_CERT" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="OPENVPN_KEY" Target="OPENVPN_KEY" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="OPENVPN_CLIENTCRT_SECRETFILE" Target="OPENVPN_CLIENTCRT_SECRETFILE" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">/run/secrets/openvpn_clientcrt</Config>
+  <Config Name="OPENVPN_CLIENTKEY_SECRETFILE" Target="OPENVPN_CLIENTKEY_SECRETFILE" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">/run/secrets/openvpn_clientkey</Config>
+  <Config Name="OPENVPN_ENCRYPTED_KEY" Target="OPENVPN_ENCRYPTED_KEY" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="true"/>
+  <Config Name="OPENVPN_ENCRYPTED_KEY_SECRETFILE" Target="OPENVPN_ENCRYPTED_KEY_SECRETFILE" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">/run/secrets/openvpn_encrypted_key</Config>
+  <Config Name="OPENVPN_KEY_PASSPHRASE" Target="OPENVPN_KEY_PASSPHRASE" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="true"/>
+  <Config Name="OPENVPN_KEY_PASSPHRASE_SECRETFILE" Target="OPENVPN_KEY_PASSPHRASE_SECRETFILE" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">/run/secrets/openvpn_key_passphrase</Config>
+  <Config Name="SERVER_NUMBER" Target="SERVER_NUMBER" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="SERVER_NAMES" Target="SERVER_NAMES" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="STREAM_ONLY" Target="STREAM_ONLY" Default="off|on" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">off</Config>
+  <Config Name="FREE_ONLY" Target="FREE_ONLY" Default="off|on" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">off</Config>
+  <Config Name="SECURE_CORE_ONLY" Target="SECURE_CORE_ONLY" Default="off|on" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">off</Config>
+  <Config Name="TOR_ONLY" Target="TOR_ONLY" Default="off|on" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">off</Config>
+  <Config Name="MULTIHOP_ONLY" Target="MULTIHOP_ONLY" Default="off|on" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">off</Config>
+  <Config Name="PREMIUM_ONLY" Target="PREMIUM_ONLY" Default="no|yes" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">no</Config>
+  <Config Name="PORT_FORWARD_ONLY" Target="PORT_FORWARD_ONLY" Default="off|on|true|false" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">off</Config>
+  <Config Name="FIREWALL_ENABLED_DISABLING_IT_SHOOTS_YOU_IN_YOUR_FOOT" Target="FIREWALL_ENABLED_DISABLING_IT_SHOOTS_YOU_IN_YOUR_FOOT" Default="on|off" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">on</Config>
+  <Config Name="FIREWALL_VPN_INPUT_PORTS" Target="FIREWALL_VPN_INPUT_PORTS" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="FIREWALL_INPUT_PORTS" Target="FIREWALL_INPUT_PORTS" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="FIREWALL_OUTBOUND_SUBNETS" Target="FIREWALL_OUTBOUND_SUBNETS" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">192.168.10.0/24</Config>
+  <Config Name="FIREWALL_IPTABLES_LOG_LEVEL" Target="FIREWALL_IPTABLES_LOG_LEVEL" Default="debug|info|warn|error" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">info</Config>
+  <Config Name="IPV6_CHECK_ADDRESSES" Target="IPV6_CHECK_ADDRESSES" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">[2001:4860:4860::8888]:53,[2606:4700:4700::1111]:53</Config>
+  <Config Name="LOG_LEVEL" Target="LOG_LEVEL" Default="debug|info|warn|error" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">info</Config>
+  <Config Name="HEALTH_SERVER_ADDRESS" Target="HEALTH_SERVER_ADDRESS" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">127.0.0.1:9999</Config>
+  <Config Name="HEALTH_TARGET_ADDRESSES" Target="HEALTH_TARGET_ADDRESSES" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">cloudflare.com:443,github.com:443</Config>
+  <Config Name="HEALTH_ICMP_TARGET_IPS" Target="HEALTH_ICMP_TARGET_IPS" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">1.1.1.1,8.8.8.8</Config>
+  <Config Name="HEALTH_SMALL_CHECK_TYPE" Target="HEALTH_SMALL_CHECK_TYPE" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">icmp</Config>
+  <Config Name="HEALTH_RESTART_VPN" Target="HEALTH_RESTART_VPN" Default="on|off" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">on</Config>
+  <Config Name="DNS_SERVER" Target="DNS_SERVER" Default="on|off" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">on</Config>
+  <Config Name="DNS_UPSTREAM_RESOLVER_TYPE" Target="DNS_UPSTREAM_RESOLVER_TYPE" Default="dot|doh|plain" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">dot</Config>
+  <Config Name="DOT" Target="DOT" Default="on|off" Mode="" Description="DNS over TLS Configuration" Type="Variable" Display="advanced" Required="false" Mask="false">on</Config>
+  <Config Name="DNS_UPSTREAM_RESOLVERS" Target="DNS_UPSTREAM_RESOLVERS" Default="cloudflare|google|quad9|quad9 secured|quad9 unsecured|cloudflare family|cloudflare security|cleanbrowsing adult|cleanbrowsing family|cleanbrowsing security|cira family|cira private|cira protected|libredns|opendns|quadrant" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">cloudflare</Config>
+  <Config Name="DNS_BLOCK_IPS" Target="DNS_BLOCK_IPS" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="DNS_BLOCK_IP_PREFIXES" Target="DNS_BLOCK_IP_PREFIXES" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="DNS_CACHING" Target="DNS_CACHING" Default="on|off" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">on</Config>
+  <Config Name="DNS_UPSTREAM_IPV6" Target="DNS_UPSTREAM_IPV6" Default="off|on" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">off</Config>
+  <Config Name="BLOCK_MALICIOUS" Target="BLOCK_MALICIOUS" Default="on|off" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">on</Config>
+  <Config Name="BLOCK_SURVEILLANCE" Target="BLOCK_SURVEILLANCE" Default="off|on" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">on</Config>
+  <Config Name="BLOCK_ADS" Target="BLOCK_ADS" Default="off|on" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">on</Config>
+  <Config Name="DNS_UNBLOCK_HOSTNAMES" Target="DNS_UNBLOCK_HOSTNAMES" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="DNS_REBINDING_PROTECTION_EXEMPT_HOSTNAMES" Target="DNS_REBINDING_PROTECTION_EXEMPT_HOSTNAMES" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="DNS_UPDATE_PERIOD" Target="DNS_UPDATE_PERIOD" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">24h</Config>
+  <Config Name="DNS_UPSTREAM_PLAIN_ADDRESSES" Target="DNS_UPSTREAM_PLAIN_ADDRESSES" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="HTTPPROXY" Target="HTTPPROXY" Default="off|on" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">off</Config>
+  <Config Name="HTTPPROXY_LOG" Target="HTTPPROXY_LOG" Default="off|on" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">off</Config>
+  <Config Name="HTTPPROXY_LISTENING_ADDRESS" Target="HTTPPROXY_LISTENING_ADDRESS" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">:8888</Config>
+  <Config Name="HTTPPROXY_STEALTH" Target="HTTPPROXY_STEALTH" Default="off|on" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">off</Config>
+  <Config Name="HTTPPROXY_USER" Target="HTTPPROXY_USER" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="true"/>
+  <Config Name="HTTPPROXY_PASSWORD" Target="HTTPPROXY_PASSWORD" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="true"/>
+  <Config Name="HTTPPROXY_USER_SECRETFILE" Target="HTTPPROXY_USER_SECRETFILE" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">/run/secrets/httpproxy_user</Config>
+  <Config Name="HTTPPROXY_PASSWORD_SECRETFILE" Target="HTTPPROXY_PASSWORD_SECRETFILE" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">/run/secrets/httpproxy_password</Config>
+  <Config Name="SHADOWSOCKS" Target="SHADOWSOCKS" Default="off|on" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">off</Config>
+  <Config Name="SHADOWSOCKS_LOG" Target="SHADOWSOCKS_LOG" Default="off|on" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">off</Config>
+  <Config Name="SHADOWSOCKS_LISTENING_ADDRESS" Target="SHADOWSOCKS_LISTENING_ADDRESS" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">:8388</Config>
+  <Config Name="SHADOWSOCKS_PASSWORD" Target="SHADOWSOCKS_PASSWORD" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="true"/>
+  <Config Name="SHADOWSOCKS_PASSWORD_SECRETFILE" Target="SHADOWSOCKS_PASSWORD_SECRETFILE" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">/run/secrets/shadowsocks_password</Config>
+  <Config Name="SHADOWSOCKS_CIPHER" Target="SHADOWSOCKS_CIPHER" Default="chacha20-ietf-poly1305|aes-128-gcm|aes-256-gcm" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">chacha20-ietf-poly1305</Config>
+  <Config Name="SOCKS5_ENABLED" Target="SOCKS5_ENABLED" Default="off|on" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">off</Config>
+  <Config Name="SOCKS5_LISTENING_ADDRESS" Target="SOCKS5_LISTENING_ADDRESS" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">:1080</Config>
+  <Config Name="SOCKS5_USER" Target="SOCKS5_USER" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="true"/>
+  <Config Name="SOCKS5_PASSWORD" Target="SOCKS5_PASSWORD" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="true"/>
+  <Config Name="HTTP_CONTROL_SERVER_LOG" Target="HTTP_CONTROL_SERVER_LOG" Default="on|off" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">on</Config>
+  <Config Name="HTTP_CONTROL_SERVER_ADDRESS" Target="HTTP_CONTROL_SERVER_ADDRESS" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">:8000</Config>
+  <Config Name="HTTP_CONTROL_SERVER_AUTH_CONFIG_FILEPATH" Target="HTTP_CONTROL_SERVER_AUTH_CONFIG_FILEPATH" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">/gluetun/auth/config.toml</Config>
+  <Config Name="HTTP_CONTROL_SERVER_AUTH_DEFAULT_ROLE" Target="HTTP_CONTROL_SERVER_AUTH_DEFAULT_ROLE" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">{}</Config>
+  <Config Name="UPDATER_PERIOD" Target="UPDATER_PERIOD" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
+  <Config Name="UPDATER_MIN_RATIO" Target="UPDATER_MIN_RATIO" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">0.8</Config>
+  <Config Name="UPDATER_VPN_SERVICE_PROVIDERS" Target="UPDATER_VPN_SERVICE_PROVIDERS" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="UPDATER_PREFER_DIRECT_DOWNLOAD" Target="UPDATER_PREFER_DIRECT_DOWNLOAD" Default="no|yes" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">no</Config>
+  <Config Name="UPDATER_PROTONVPN_EMAIL" Target="UPDATER_PROTONVPN_EMAIL" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="true"/>
+  <Config Name="UPDATER_PROTONVPN_PASSWORD" Target="UPDATER_PROTONVPN_PASSWORD" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="true"/>
+  <Config Name="PUBLICIP_FILE" Target="PUBLICIP_FILE" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">/tmp/gluetun/ip</Config>
+  <Config Name="PUBLICIP_ENABLED" Target="PUBLICIP_ENABLED" Default="on|off" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">on</Config>
+  <Config Name="PUBLICIP_API" Target="PUBLICIP_API" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">ipinfo,ifconfigco,ip2location,cloudflare</Config>
+  <Config Name="PUBLICIP_API_TOKEN" Target="PUBLICIP_API_TOKEN" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="true"/>
+  <Config Name="STORAGE_SERVERS_ENABLED" Target="STORAGE_SERVERS_ENABLED" Default="on|off" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">on</Config>
+  <Config Name="STORAGE_SERVERS_DIRECTORY_PATH" Target="STORAGE_SERVERS_DIRECTORY_PATH" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">/gluetun/servers/</Config>
+  <Config Name="PPROF_ENABLED" Target="PPROF_ENABLED" Default="no|yes" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">no</Config>
+  <Config Name="PPROF_BLOCK_PROFILE_RATE" Target="PPROF_BLOCK_PROFILE_RATE" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
+  <Config Name="PPROF_MUTEX_PROFILE_RATE" Target="PPROF_MUTEX_PROFILE_RATE" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
+  <Config Name="PPROF_HTTP_SERVER_ADDRESS" Target="PPROF_HTTP_SERVER_ADDRESS" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">:6060</Config>
+  <Config Name="VERSION_INFORMATION" Target="VERSION_INFORMATION" Default="on|off" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">on</Config>
+  <Config Name="PUID" Target="PUID" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">1000</Config>
+  <Config Name="PGID" Target="PGID" Default="" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">1000</Config>
+  <TailscaleStateDir/>
+</Container>

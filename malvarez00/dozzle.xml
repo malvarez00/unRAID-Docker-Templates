@@ -22,8 +22,8 @@ mkdir -p /mnt/user/appdata/dozzle &amp;amp;&amp;amp; docker run -it --rm amir20/
 If you do not want authentication, change the DOZZLE_AUTH_PROVIDER variable from 'simple' to 'none'.</Overview>
   <Category>Tools:Utilities</Category>
   <WebUI>http://[IP]:[PORT:8080]/</WebUI>
-  <TemplateURL>https://raw.githubusercontent.com/selfhosters/unRAID-CA-templates/master/templates/dozzle.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/selfhosters/unRAID-CA-templates/master/templates/img/dozzle.png</Icon>
+  <TemplateURL>https://raw.githubusercontent.com/malvarez00/unRAID-Docker-Templates/refs/heads/master/malvarez00/dozzle.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/malvarez00/unRAID-Docker-Templates/refs/heads/master/malvarez00/icons/dozzle.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>

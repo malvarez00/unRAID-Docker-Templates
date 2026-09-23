@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>dozzle</Name>
+  <Repository>amir20/dozzle</Repository>
+  <Registry>https://hub.docker.com/r/amir20/dozzle/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <MyMAC/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/87798-support-selfhostersnets-template-repository/</Support>
+  <Project>https://github.com/amir20/dozzle</Project>
+  <ReadMe/>
+  <Overview>Dozzle is a lightweight, real-time web-based Docker log viewer and monitor.&#13;
+&#13;
+Authentication Note:&#13;
+When using simple authentication, you must generate a users.yml file in your appdata folder before starting the container.&#13;
+&#13;
+Run this command in the Unraid Terminal (replace admin and mypassword with your details):&#13;
+mkdir -p /mnt/user/appdata/dozzle &amp;amp;&amp;amp; docker run -it --rm amir20/dozzle generate admin --password mypassword --name "Administrator" &amp;gt; /mnt/user/appdata/dozzle/users.yml&#13;
+&#13;
+If you do not want authentication, change the DOZZLE_AUTH_PROVIDER variable from 'simple' to 'none'.</Overview>
+  <Category>Tools:Utilities</Category>
+  <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/selfhosters/unRAID-CA-templates/master/templates/dozzle.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/selfhosters/unRAID-CA-templates/master/templates/img/dozzle.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1790122418</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="WebUI Port" Target="8080" Default="8080" Mode="tcp" Description="Container WebUI Port" Type="Port" Display="always" Required="true" Mask="false">8080</Config>
+  <Config Name="Docker Socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="rw" Description="Path to Docker socket on the Unraid host" Type="Path" Display="always" Required="true" Mask="false">/var/run/docker.sock</Config>
+  <Config Name="Appdata Storage" Target="/data" Default="/mnt/user/appdata/dozzle" Mode="rw" Description="Directory where users.yml is located" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/dozzle</Config>
+  <Config Name="Auth Provider" Target="DOZZLE_AUTH_PROVIDER" Default="simple" Mode="" Description="Authentication provider ('simple', 'none', 'forward-proxy', or 'oidc')" Type="Variable" Display="always" Required="false" Mask="false">simple</Config>
+  <Config Name="Enable Container Actions" Target="DOZZLE_ENABLE_ACTIONS" Default="false" Mode="" Description="Allow starting, stopping, and restarting containers from the WebUI (true/false)" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="Enable Web Terminal Shell" Target="DOZZLE_ENABLE_SHELL" Default="false|true" Mode="" Description="Allow attaching to container console/terminal from the WebUI (true/false)" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="Container Filter" Target="DOZZLE_FILTER" Default="" Mode="" Description="Filter visible containers (e.g., status=running or name=app)" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Base URL" Target="DOZZLE_BASE" Default="/" Mode="" Description="Base URL subpath if running behind a reverse proxy sub-folder (e.g. /dozzle)" Type="Variable" Display="advanced" Required="false" Mask="false">/</Config>
+  <Config Name="Log Level" Target="DOZZLE_LEVEL" Default="trace|debug|info|warn|error" Mode="" Description="Logging level (trace, debug, info, warn, error)" Type="Variable" Display="advanced" Required="false" Mask="false">info</Config>
+  <Config Name="Disable Analytics" Target="DOZZLE_NO_ANALYTICS" Default="true|false" Mode="" Description="Disable anonymous telemetry" Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
+  <TailscaleStateDir/>
+</Container>
